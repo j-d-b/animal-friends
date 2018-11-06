@@ -5,6 +5,8 @@ Add some cute animal friends and watch them grow! Favorites are saved to `localS
 
 Built using [`min-react-starter`](https://github.com/j-d-b/min-react-starter).
 
+Play around with it [here](http://animal-friends.surge.sh/).
+
 ## Usage
 Install the dependency packages.
 ```
