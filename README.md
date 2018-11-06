@@ -23,4 +23,4 @@ yarn build
 Bundles and transforms src files with webpack mode set to production. Outputs to `/dist`, which can then by served (e.g. by a CDN; I like [Netlify](https://www.netlify.com/)).
 
 ## Inspiration
-I wanted to practice using Redux and React Hooks, so I thought I'd do it all in one (and try to do something *a bit more exciting* than a Todo app).
+I wanted to practice using Redux, React Hooks, and container/component separation, so I thought I'd do it all in one (and try to do something *a bit more exciting* than a Todo app).
