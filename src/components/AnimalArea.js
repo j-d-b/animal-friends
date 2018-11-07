@@ -5,6 +5,8 @@ const getAge = (time, birthTime) => {
   return ageMinutes >= 0 ? ageMinutes : 0;
 };
 
+const getSize = age => 120 * (1 - (Math.E ** (age/-70))); // y = C(1 - e^-kt)
+
 const AnimalArea = ({ time, animals, toggleFavorite, sortDirection }) => (
   <div>
     {[...animals].sort((a, b) => (
@@ -13,10 +15,11 @@ const AnimalArea = ({ time, animals, toggleFavorite, sortDirection }) => (
         : a.birthTime - b.birthTime
     )).map(animal => {
       const age = getAge(time, animal.birthTime);
+      const size = getSize(age);
       return (
         <div key={animal.id} onClick={() => toggleFavorite(animal.id)}>
           {animal.favorite && '⭐️'}
-          <span style={{ fontSize: `calc(1rem + ${2 * age}px` }}>
+          <span style={{ fontSize: `calc(1rem + ${size}px` }}>
             {animal.image}
           </span>
           {animal.name} Age: {age} min
