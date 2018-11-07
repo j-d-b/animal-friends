@@ -1,7 +1,7 @@
 # Animal Friends 🐕
 A basic, (largely) un-styled, example React/Redux app (also using [React Hooks](https://reactjs.org/docs/hooks-intro.html)!).
 
-Add some cute animal friends and watch them grow! Favorites are saved to `localStorage`.
+Add some cute animal friends and watch them grow! Favorites are persisted using `localStorage`.
 
 Built using [`min-react-starter`](https://github.com/j-d-b/min-react-starter).
 
