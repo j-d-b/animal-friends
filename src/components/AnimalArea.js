@@ -19,7 +19,7 @@ const AnimalArea = ({ time, animals, toggleFavorite, sortDirection }) => (
       return (
         <div key={animal.id} onClick={() => toggleFavorite(animal.id)}>
           {animal.favorite && '⭐️'}
-          <span style={{ fontSize: `calc(1rem + ${size}px` }}>
+          <span style={{ fontSize: `calc(1rem + ${size}px`, 'cursor': 'pointer' }}>
             {animal.image}
           </span>
           {animal.name} Age: {age} min

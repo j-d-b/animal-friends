@@ -10,7 +10,7 @@ const App = () => (
     <AddAnimal />
     <ChangeSortDirection />
     <AnimalsContainer />
-    <p><i>Click to favorite ⭐️</i></p>
+    <p><i>Click a friend to favorite ⭐️</i></p>
   </div>
 );
 
