@@ -9,11 +9,11 @@ const animals = (state = [], action) => {
           type: action.animalType,
           image: action.image,
           birthTime: action.birthTime,
-          favorite: false
+          isFavorite: false
         }
       ]
     case 'TOGGLE_FAVORITE':
-      return state.map(animal => animal.id === action.id ? { ...animal, favorite: !animal.favorite } : animal)
+      return state.map(animal => animal.id === action.id ? { ...animal, isFavorite: !animal.isFavorite } : animal)
     default:
       return state;
   }

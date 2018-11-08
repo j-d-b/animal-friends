@@ -32,7 +32,7 @@ const store = createStore(
 
 store.subscribe(() => {
   saveFavAnimals({
-    animals: store.getState().animals.filter(animal => animal.favorite)
+    animals: store.getState().animals.filter(animal => animal.isFavorite)
   });
 });
 

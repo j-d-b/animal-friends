@@ -1,12 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import AnimalArea from '../components/AnimalArea';
+import Animals from '../components/Animals';
 import { toggleFavorite, AnimalTypeFilters } from '../actions';
 
 const { useState, useEffect } = React;
 
-const AnimalContainer = (props) => {
+const AnimalContainer = ({ animals, sortDirection, toggleFavorite }) => {
   const [time, setTime] = useState(Date.now());
 
   useEffect(() => {
@@ -14,7 +14,14 @@ const AnimalContainer = (props) => {
     return () => clearInterval(interval30Sec);
   });
 
-  return <AnimalArea {...props} time={time} />;
+  return (
+    <Animals
+      animals={animals}
+      sortDirection={sortDirection}
+      toggleFavorite={toggleFavorite}
+      time={time}
+    />
+  );
 };
 
 const mapStateToProps = ({ animals, sortDirection }) => ({ animals, sortDirection });
