@@ -7,7 +7,7 @@ const getAge = (time, birthTime) => {
   return ageMinutes >= 0 ? ageMinutes : 0;
 };
 
-const getSize = age => 120 * (1 - (Math.E ** (age/-100))); // y = C(1 - e^-kt)
+const getSize = age => 120 * (1 - (Math.E ** (age/-2500))); // y = C(1 - e^-kt)
 
 const Animals = ({ time, animals, toggleFavorite, sortDirection }) => (
   <div>
