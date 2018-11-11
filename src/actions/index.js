@@ -8,11 +8,26 @@ export const addAnimal = (name, image) => ({
   image
 });
 
-export const toggleFavorite = id => ({
+export const toggleFavorite = animalId => ({
   type: 'TOGGLE_FAVORITE',
-  id
+  animalId
 });
 
 export const changeSortDirection = () => ({
   type: 'CHANGE_SORT_DIRECTION'
+});
+
+export const addBerry = berryType => ({
+  type: 'ADD_BERRY',
+  berryType
+});
+
+export const selectBerry = () => ({
+  type: 'SELECT_BERRY'
+});
+
+export const giveBerry = (animalId, berryType) => ({
+  type: 'GIVE_BERRY',
+  animalId,
+  berryType
 });

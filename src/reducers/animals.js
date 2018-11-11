@@ -9,11 +9,19 @@ const animals = (state = [], action) => {
           type: action.animalType,
           image: action.image,
           birthTime: action.birthTime,
-          isFavorite: false
+          isFavorite: false,
+          appliedBerries: []
         }
       ]
     case 'TOGGLE_FAVORITE':
-      return state.map(animal => animal.id === action.id ? { ...animal, isFavorite: !animal.isFavorite } : animal)
+      return state.map(animal => animal.id === action.animalId ? { ...animal, isFavorite: !animal.isFavorite } : animal);
+    case 'GIVE_BERRY':
+      return state.map(animal => (
+        animal.id === action.animalId
+          ? { ...animal, appliedBerries: [...animal.appliedBerries, action.berryType] }
+          : animal
+        )
+      );
     default:
       return state;
   }

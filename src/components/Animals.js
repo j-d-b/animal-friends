@@ -9,7 +9,7 @@ const getAge = (time, birthTime) => {
 
 const getSize = age => 120 * (1 - (Math.E ** (age/-2500))); // y = C(1 - e^-kt)
 
-const Animals = ({ time, animals, toggleFavorite, sortDirection }) => (
+const Animals = ({ time, animals, toggleFavorite, giveBerry, berry, sortDirection }) => (
   <div>
     {[...animals].sort((a, b) => (
       sortDirection === 'ASCENDING'
@@ -18,15 +18,19 @@ const Animals = ({ time, animals, toggleFavorite, sortDirection }) => (
     )).map(animal => {
       const age = getAge(time, animal.birthTime);
       return (
-        <Animal
-          key={animal.id}
-          toggleFavorite={() => toggleFavorite(animal.id)}
-          name={animal.name}
-          isFavorite={animal.isFavorite}
-          image={animal.image}
-          age={age}
-          size={getSize(age)}
-        />
+        <div key={animal.id}>
+          {animal.isFavorite && '⭐️'}
+          <Animal
+            onClick={() => toggleFavorite(animal.id)}
+            name={animal.name}
+            isFavorite={animal.isFavorite}
+            image={animal.image}
+            age={age}
+            size={getSize(age)}
+            appliedBerries={animal.appliedBerries}
+          />
+          {berry.isSelected ? <button onClick={() => giveBerry(animal.id, berry.type)}>Give Selected Berry</button> : ''}
+        </div>
       );
     })}
   </div>
