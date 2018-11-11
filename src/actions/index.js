@@ -17,6 +17,10 @@ export const changeSortDirection = () => ({
   type: 'CHANGE_SORT_DIRECTION'
 });
 
+export const searchForBerry = () => ({
+  type: 'SEARCH_FOR_BERRY'
+});
+
 export const addBerry = berryType => ({
   type: 'ADD_BERRY',
   berryType
