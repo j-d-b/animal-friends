@@ -29,7 +29,7 @@ const Animals = ({ time, animals, toggleFavorite, giveBerry, berry, sortDirectio
             size={getSize(age)}
             appliedBerries={animal.appliedBerries}
           />
-          {berry.isSelected ? <button onClick={() => giveBerry(animal.id, berry.type)}>Give Selected Berry</button> : ''}
+          {berry.isSelected ? <button onClick={() => giveBerry(animal.id, berry.type, berry.effectDuration)}>Give Selected Berry</button> : ''}
         </div>
       );
     })}

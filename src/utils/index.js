@@ -13,7 +13,11 @@ const weightedBerries = ((specs) => {
   berrySpecs
 })(berrySpecs);
 
-export const randomBerry = () => 'STRAWBERRY';
+// TODO
+export const randomBerry = () => ({
+  type: 'STRAWBERRY',
+  effectDuration: 5 * 60 * 1000 // 5 minutes
+});
 
 export const loadSavedAnimals = () => {
   try {

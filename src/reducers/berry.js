@@ -1,28 +1,32 @@
-const berry = (state = { type: 'EMPTY', isSelected: false, isSearching: false }, action) => {
+const emptyBerry = {
+  type: 'EMPTY',
+  effectDuration: 0,
+  isSearching: false,
+  isSelected: false
+};
+
+const berry = (state = emptyBerry, action) => {
   switch (action.type) {
     case 'SEARCH_FOR_BERRY':
       return {
-        ...berry,
+        ...state,
         isSearching: true
       };
     case 'ADD_BERRY':
       return {
         type: action.berryType,
+        effectDuration: action.effectDuration,
         isSelected: false,
         isSearching: false
       };
     case 'SELECT_BERRY':
       return {
-        type: state.type,
+        ...state,
         isSelected: true,
         isSearching: false
       };
     case 'GIVE_BERRY':
-      return {
-        type: 'EMTPY',
-        isSelected: false,
-        isSearching: false
-      };
+      return emptyBerry;
     default:
       return state;
   }

@@ -28,20 +28,21 @@ export const pruneBerries = currTime => ({
   currTime
 });
 
-export const addBerry = berryType => ({
+export const addBerry = berry => ({
   type: 'ADD_BERRY',
-  berryType
+  berryType: berry.type,
+  effectDuration: berry.effectDuration
 });
 
 export const selectBerry = () => ({
   type: 'SELECT_BERRY'
 });
 
-export const giveBerry = (animalId, berryType) => ({
+export const giveBerry = (animalId, berryType, effectDuration) => ({
   type: 'GIVE_BERRY',
   animalId,
   berryType,
-  expiresAt: Date.now() + (1000 * 60) // one minute
+  expiresAt: Date.now() + effectDuration
 });
 
 export const getBerry = () => {
