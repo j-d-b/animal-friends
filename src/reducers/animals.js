@@ -18,10 +18,17 @@ const animals = (state = [], action) => {
     case 'GIVE_BERRY':
       return state.map(animal => (
         animal.id === action.animalId
-          ? { ...animal, appliedBerries: [...animal.appliedBerries, action.berryType] }
+          ? { ...animal, appliedBerries: [...animal.appliedBerries, { type: action.berryType, expiresAt: action.expiresAt }] }
           : animal
         )
       );
+    case 'PRUNE_BERRIES':
+      return state.map(animal => (
+        {
+          ...animal,
+          appliedBerries: animal.appliedBerries.filter(({ expiresAt }) => expiresAt >= action.currTime)
+        }
+      ));
     default:
       return state;
   }

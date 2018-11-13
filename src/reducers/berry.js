@@ -1,4 +1,4 @@
-const berry = (state = { type: '', isSelected: false, isSearching: false }, action) => {
+const berry = (state = { type: 'EMPTY', isSelected: false, isSearching: false }, action) => {
   switch (action.type) {
     case 'SEARCH_FOR_BERRY':
       return {
@@ -19,7 +19,7 @@ const berry = (state = { type: '', isSelected: false, isSearching: false }, acti
       };
     case 'GIVE_BERRY':
       return {
-        type: '',
+        type: 'EMTPY',
         isSelected: false,
         isSearching: false
       };

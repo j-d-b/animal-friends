@@ -10,18 +10,20 @@ const BerryImage = ({ type }) => {
 };
 
 const BerryDescription = ({ type }) => {
- switch (type) {
-   case 'STRAWBERRY':
-    return 'A classic treat known for its bright red color';
-   default:
-    return '';
- }
+  switch (type) {
+    case 'STRAWBERRY':
+      return 'A classic treat known for its bright red color';
+    case 'EMPTY':
+      return '';
+    default:
+      return '';
+  }
 };
 
-const Berry = ({ type, isSelected, select }) => {
+const Berry = ({ type, isSelected, selectBerry }) => {
   return (
     <span
-      onClick={select}
+      onClick={() => type !== 'EMPTY' && selectBerry()}
       style={{
         backgroundColor: isSelected ? 'orange' : '',
         cursor: 'pointer'

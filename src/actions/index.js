@@ -1,5 +1,7 @@
 import nanoid from 'nanoid';
 
+import { randomBerry } from '../utils';
+
 export const addAnimal = (name, image) => ({
   type: 'ADD_ANIMAL',
   id: nanoid(),
@@ -21,6 +23,11 @@ export const searchForBerry = () => ({
   type: 'SEARCH_FOR_BERRY'
 });
 
+export const pruneBerries = currTime => ({
+  type: 'PRUNE_BERRIES',
+  currTime
+});
+
 export const addBerry = berryType => ({
   type: 'ADD_BERRY',
   berryType
@@ -33,5 +40,13 @@ export const selectBerry = () => ({
 export const giveBerry = (animalId, berryType) => ({
   type: 'GIVE_BERRY',
   animalId,
-  berryType
+  berryType,
+  expiresAt: Date.now() + (1000 * 60) // one minute
 });
+
+export const getBerry = () => {
+  return dispatch => {
+    dispatch(searchForBerry());
+    setTimeout(() => dispatch(addBerry(randomBerry())), 2500);
+  };
+};

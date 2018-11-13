@@ -2,15 +2,18 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Animals from '../components/Animals';
-import { toggleFavorite, giveBerry } from '../actions';
+import { pruneBerries, toggleFavorite, giveBerry } from '../actions';
 
 const { useState, useEffect } = React;
 
-const AnimalContainer = ({ animals, berry, sortDirection, toggleFavorite, giveBerry }) => {
+const AnimalContainer = ({ animals, berry, sortDirection, toggleFavorite, giveBerry, pruneBerries }) => {
   const [time, setTime] = useState(Date.now());
 
   useEffect(() => {
-    const interval30Sec = setInterval(() => setTime(Date.now()), 30000);
+    const interval30Sec = setInterval(() => {
+      setTime(Date.now());
+      pruneBerries(time);
+    }, 30000);
     return () => clearInterval(interval30Sec);
   });
 
@@ -30,7 +33,8 @@ const mapStateToProps = ({ animals, sortDirection, berry }) => ({ animals, sortD
 
 const mapDispatchToProps = dispatch => ({
   toggleFavorite: animalId => dispatch(toggleFavorite(animalId)),
-  giveBerry: (animalId, berryType) => dispatch(giveBerry(animalId, berryType))
+  giveBerry: (animalId, berryType) => dispatch(giveBerry(animalId, berryType)),
+  pruneBerries: currTime => dispatch(pruneBerries(currTime))
 });
 
 export default connect(

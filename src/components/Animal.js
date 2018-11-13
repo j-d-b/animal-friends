@@ -5,7 +5,7 @@ const Animal = ({ name, age, size, image, onClick, appliedBerries }) => (
     <span onClick={onClick} style={{ fontSize: `calc(1rem + ${size}px`, 'cursor': 'pointer' }}>
       {image}
     </span>
-    <span style={{ color: appliedBerries.includes('STRAWBERRY') && 'red'}}>{name}</span>
+    <span style={{ color: appliedBerries.some(({ type }) => type === 'STRAWBERRY') && 'red'}}>{name}</span>
     <span> Age: {age} min</span>
   </span>
 );
