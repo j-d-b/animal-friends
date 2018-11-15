@@ -9,7 +9,7 @@ const BerryContainer = ({ berry, dispatch }) => (
     <button onClick={() => berry.type === 'EMPTY' && dispatch(getBerry())}>Get Berry</button>
     {berry.isSearching && 'Searching for berries...'}
     <Berry
-      type={berry.type}
+      berry={berry}
       isSelected={berry.isSelected}
       selectBerry={() => dispatch(selectBerry())}
     />

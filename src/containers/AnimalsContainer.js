@@ -33,7 +33,7 @@ const mapStateToProps = ({ animals, sortDirection, berry }) => ({ animals, sortD
 
 const mapDispatchToProps = dispatch => ({
   toggleFavorite: animalId => dispatch(toggleFavorite(animalId)),
-  giveBerry: (animalId, berryType, effectDuration) => dispatch(giveBerry(animalId, berryType, effectDuration)),
+  giveBerry: (animalId, berry) => dispatch(giveBerry(animalId, berry.type, berry.effectDuration)),
   pruneBerries: currTime => dispatch(pruneBerries(currTime))
 });
 

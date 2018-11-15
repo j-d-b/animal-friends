@@ -31,7 +31,9 @@ export const pruneBerries = currTime => ({
 export const addBerry = berry => ({
   type: 'ADD_BERRY',
   berryType: berry.type,
-  effectDuration: berry.effectDuration
+  effectDuration: berry.effectDuration,
+  berryImage: berry.image,
+  berryDescription: berry.description
 });
 
 export const selectBerry = () => ({
@@ -48,6 +50,6 @@ export const giveBerry = (animalId, berryType, effectDuration) => ({
 export const getBerry = () => {
   return dispatch => {
     dispatch(searchForBerry());
-    setTimeout(() => dispatch(addBerry(randomBerry())), 2500);
+    setTimeout(() => dispatch(addBerry(randomBerry())), 2000);
   };
 };

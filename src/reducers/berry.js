@@ -1,6 +1,8 @@
 const emptyBerry = {
   type: 'EMPTY',
   effectDuration: 0,
+  image: '',
+  description: '',
   isSearching: false,
   isSelected: false
 };
@@ -16,6 +18,8 @@ const berry = (state = emptyBerry, action) => {
       return {
         type: action.berryType,
         effectDuration: action.effectDuration,
+        image: action.berryImage,
+        description: action.berryDescription,
         isSelected: false,
         isSearching: false
       };
