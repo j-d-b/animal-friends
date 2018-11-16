@@ -50,6 +50,6 @@ export const giveBerry = (animalId, berryType, effectDuration) => ({
 export const getBerry = () => {
   return dispatch => {
     dispatch(searchForBerry());
-    setTimeout(() => dispatch(addBerry(randomBerry())), 2000);
+    setTimeout(() => dispatch(addBerry(randomBerry())), 1500);
   };
 };
