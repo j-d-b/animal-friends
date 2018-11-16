@@ -6,17 +6,16 @@ const Animal = ({ name, age, size, image, onClick, appliedBerries }) => {
   return (
     <span>
       <span onClick={onClick} style={{ fontSize: `calc(1rem + ${size}px`, 'cursor': 'pointer' }}>
-        <span style={
-          {
-            display: 'inline-block',
-            transform: hasBerry('SPINBERRY') && 'rotate(180deg)',
-            boxShadow: hasBerry('STARBERRY') && '0 0 15px gold'
-          }}
-        >
+        <span style={{
+          display: 'inline-block',
+          borderRadius: '100px',
+          transform: hasBerry('SPINBERRY') && 'rotate(180deg)',
+          boxShadow: hasBerry('STARBERRY') && '0 0 20px gold'
+        }}>
           {image}
         </span>
       </span>
-      {hasBerry('CHERRY') && '😊'}
+      {appliedBerries.filter(({ type }) => type === 'CHERRY').map(() => '😊')}
       <span style={{ color: hasBerry('STRAWBERRY') && 'red'}}>{name}</span>
       <span> Age: {age} min</span>
     </span>

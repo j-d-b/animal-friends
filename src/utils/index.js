@@ -6,7 +6,7 @@ const berries = [
     type: 'CHERRY',
     image: '🍒',
     description: 'Small, sweet, and tart, the cherry is a lovely snack',
-    effectDuration: 0,
+    effectDuration: 30000,
     frequency: 0.65
   },
   {

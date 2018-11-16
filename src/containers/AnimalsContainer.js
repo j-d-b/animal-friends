@@ -14,7 +14,7 @@ const AnimalContainer = ({ animals, berry, sortDirection, toggleFavorite, giveBe
     const interval30Sec = setInterval(() => {
       setTime(Date.now());
       pruneBerries(Date.now());
-    }, 30000);
+    }, 20000);
     return () => clearInterval(interval30Sec);
   }, []);
 
