@@ -10,12 +10,13 @@ const AnimalContainer = ({ animals, berry, sortDirection, toggleFavorite, giveBe
   const [time, setTime] = useState(Date.now());
 
   useEffect(() => {
+    pruneBerries(time);
     const interval30Sec = setInterval(() => {
       setTime(Date.now());
       pruneBerries(time);
     }, 30000);
     return () => clearInterval(interval30Sec);
-  });
+  }, []);
 
   return (
     <Animals
