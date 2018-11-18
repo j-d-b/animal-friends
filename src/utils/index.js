@@ -1,3 +1,5 @@
+import 'core-js/fn/array/flat-map';
+
 const minToMs = min => min * 60 * 1000;
 const hrToMs = hr => hr * 60 * 60 * 1000;
 
@@ -45,7 +47,7 @@ export const loadSavedAnimals = () => {
   }
 };
 
-export const saveFavAnimals = (state) => {
+export const saveFavAnimals = state => {
   try {
     const animals = JSON.stringify(state.animals);
     localStorage.setItem('favAnimals', animals);
