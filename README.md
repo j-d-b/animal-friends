@@ -1,11 +1,11 @@
 # Animal Friends 🐕
 A basic, (largely) un-styled, example React/Redux app (also using [React Hooks](https://reactjs.org/docs/hooks-intro.html)!).
 
-Add some cute animal friends and watch them grow! Favorites are persisted using `localStorage`.
+Add some cute animal friends, feed them berries, and watch them grow! Favorites are persisted using `localStorage`.
 
-Built using [`min-react-starter`](https://github.com/j-d-b/min-react-starter).
+Built using my own [`min-react-starter`](https://github.com/j-d-b/min-react-starter).
 
-Play around with a live version [here](http://animal-friends.surge.sh/).
+Play around with a live version at [here](http://animal-friends.surge.sh/).
 
 ## Usage
 Install the dependency packages.
@@ -26,3 +26,5 @@ Bundles and transforms src files with webpack mode set to production. Outputs to
 
 ## Inspiration
 I wanted to practice using Redux, React Hooks, and container/component separation, so I thought I'd do it all in one (and try to do something *a bit more exciting* than a Todo app).
+
+I'm trying to incrementally add to this project, because it's kind of fun.
