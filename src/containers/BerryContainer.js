@@ -1,21 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { getBerry, selectBerry } from '../actions';
+import { selectBerry } from '../actions';
 import Berry from '../components/Berry';
 
-const BerryContainer = ({ berry, dispatch }) => (
-  <div>
-    <button onClick={() => berry.type === 'EMPTY' && dispatch(getBerry())}>Get Berry</button>
-    {berry.isSearching && 'Searching for berries...'}
-    <Berry
-      berry={berry}
-      isSelected={berry.isSelected}
-      selectBerry={() => dispatch(selectBerry())}
-    />
-  </div>
-);
+const mapStateToProps = ({ berry }) => ({
+  berry,
+  isSelected: berry.isSelected
+});
 
-const mapStateToProps = ({ berry }) => ({ berry });
+const mapDispatchToProps = dispatch => ({ selectBerry: () => dispatch(selectBerry()) });
 
-export default connect(mapStateToProps)(BerryContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(Berry);

@@ -5,7 +5,8 @@ import { changeSortDirection } from '../actions';
 
 const ChangeSortDirection = ({ sortDirection, dispatch }) => (
   <div>
-    Sort Age: <button onClick={() => dispatch(changeSortDirection())}>{sortDirection}</button>
+    <span>Sort Age: </span>
+    <button onClick={() => dispatch(changeSortDirection())}>{sortDirection}</button>
   </div>
 );
 
