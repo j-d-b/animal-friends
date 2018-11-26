@@ -11,11 +11,9 @@ import App from './components/App';
 const store = createStore(
   rootReducer,
   { animals: loadSavedAnimals() },
-  applyMiddleware(thunk)
-  compose(
-    applyMiddleware(thunk),
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-  )
+  window.__REDUX_DEVTOOLS_EXTENSION__
+    ? compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__())
+    : applyMiddleware(thunk)
 );
 
 store.subscribe(() => {
