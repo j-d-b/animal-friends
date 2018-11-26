@@ -1,10 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 
 import Animals from '../components/Animals';
 import { pruneBerries, toggleFavorite, giveBerry } from '../actions';
-
-const { useState, useEffect } = React;
 
 const AnimalContainer = ({ animals, berry, sortDirection, toggleFavorite, giveBerry, pruneBerries }) => {
   const [time, setTime] = useState(Date.now());

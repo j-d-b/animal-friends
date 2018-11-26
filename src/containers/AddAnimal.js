@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import nanoid from 'nanoid';
 
 import { addAnimal } from '../actions';
 
-const { useState } = React;
 const animals = ['🐕', '🐈', '🐟', '🐍', '🐖', '🐑', '🐓', '🦔'];
 
 const AddAnimal = ({ dispatch }) => {
