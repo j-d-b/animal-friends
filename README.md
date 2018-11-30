@@ -5,7 +5,7 @@ Add some cute animal friends, feed them berries, and watch them grow! Favorites 
 
 Built using my own [`min-react-starter`](https://github.com/j-d-b/min-react-starter).
 
-Play around with a live version at [here](https://animal-friends.netlify.com/).
+Play around with a live version [here](https://animal-friends.netlify.com/).
 
 ## Usage
 Install the dependency packages.
