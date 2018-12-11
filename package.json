@@ -7,7 +7,7 @@
     "build": "webpack --mode production"
   },
   "main": "src/index.js",
-  "repository": "https://github.com/j-d-b/min-react-setup",
+  "repository": "https://github.com/j-d-b/animal-friends",
   "author": "j-d-b",
   "license": "MIT",
   "private": false,
