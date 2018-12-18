@@ -1,6 +1,6 @@
 {
   "name": "animal-friends",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A basic, (largely) un-styled, example React/Redux app (also using React Hooks!) with cute animals",
   "scripts": {
     "develop": "webpack-dev-server --hot --open --mode development",
