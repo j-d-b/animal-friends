@@ -4,11 +4,11 @@ import nanoid from 'nanoid';
 
 import { addAnimal } from '../actions';
 
-const animals = ['🐕', '🐈', '🐟', '🐍', '🐖', '🐑', '🐓', '🦔'];
+const animalOptions = ['🐕', '🐈', '🐟', '🐍', '🐖', '🐑', '🐓', '🦔'];
 
 const AddAnimal = ({ dispatch }) => {
   const [name, setName] = useState('');
-  const [image, setImage] = useState(animals[0]);
+  const [image, setImage] = useState(animalOptions[0]);
 
   return (
     <div>
@@ -27,7 +27,7 @@ const AddAnimal = ({ dispatch }) => {
 
         <span> Type: </span>
         <select value={image} onChange={e => setImage(e.target.value)}>
-          {animals.map(animal => <option key={animal} value={animal}>{animal}</option>)}
+          {animalOptions.map(animal => <option key={animal} value={animal}>{animal}</option>)}
         </select>
 
         <button type="submit">ADD</button>
